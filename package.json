@@ -8,14 +8,15 @@
     "pre-commit": "lint-staged",
     "lint": "eslint \"src/**/*.{ts,tsx}\" --max-warnings=0",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
-    "start": "ts-node builder.ts --watch",
-    "build": "ts-node builder.ts"
+    "start": "ts-node ./scripts/start.ts",
+    "build": "ts-node ./scripts/builder.ts"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@craftamap/esbuild-plugin-html": "^0.5.0",
     "@types/fs-extra": "^9.0.13",
     "@types/live-server": "^1.2.1",
     "@types/node": "^18.11.9",
