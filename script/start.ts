@@ -9,7 +9,14 @@ import { buildParams } from "./build-options";
 /**
  * Use ESM and splitting for better performance for development
  */
-const options: BuildOptions = { ...buildParams, minify: false, incremental: true, format: "esm", splitting: true };
+const options: BuildOptions = {
+  ...buildParams,
+  minify: false,
+  sourcemap: true,
+  incremental: true,
+  format: "esm",
+  splitting: true
+};
 
 /**
  * Live Server Params

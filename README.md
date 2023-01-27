@@ -1,29 +1,32 @@
-# esbuild React Typescript Template
+# Sample Hardhat Project
 
-> This is a Typecript template for [esbuild create react app](https://github.com/awran5/esbuild-create-react-app) project.
+This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
 
-## What is inside?
+Try running some of the following tasks:
 
-- [TypeScript](https://www.typescriptlang.org/)
-- [esbuild](https://esbuild.github.io/)
-- [Eslint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
-- [Husky](https://github.com/typicode/husky)
-- [lint-staged](https://github.com/okonet/lint-staged)
-- [live-server](https://github.com/tapio/live-server)
+```shell
+npx hardhat help
+npx hardhat test
+REPORT_GAS=true npx hardhat test
+npx hardhat node
+npx hardhat run scripts/deploy.ts
+```
 
-## Update (01-11-2022)
+## Memo
 
-- add: css module support [esbuild-css-modules-plugin](https://www.npmjs.com/package/esbuild-css-modules-plugin)
-- add: sass/scss [esbuild-sass-plugin](https://www.npmjs.com/package/esbuild-sass-plugin)
-- add: [PostCSS](https://github.com/postcss/postcss)
-- add: [postcss-preset-env](https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env)
-- add: [autoprefixer](https://github.com/postcss/autoprefixer)
-- build: update React 18
-- build: update dependencies
-- refactor: rename `dist` folder to `build`
-- refactor: switch to npm instead of yarn
+- Address
+  contract successfully deployed to 0x5FbDB2315678afecb367f032d93F642f64180aa3
+- Account
+  0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 (0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266)
+  0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d (0x70997970C51812dc3A010C7d01b50e0d17dc79C8)
+  0x5de4111afa1a4b94908f83103eb1f1706367c2e68ca870fc3fb9a804cdab365a (0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC)
 
-### License
+0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
 
-MIT © [awran5](https://github.com/awran5/)
+#
+
+
+https://dashboard.alchemy.com/
+- API Key: H1S0GU_jUOt1dk_F9-Yageyabd0BQq3i
+- Https: https://eth-mainnet.g.alchemy.com/v2/H1S0GU_jUOt1dk_F9-Yageyabd0BQq3i
+- Websock: wss://eth-mainnet.g.alchemy.com/v2/H1S0GU_jUOt1dk_F9-Yageyabd0BQq3i
