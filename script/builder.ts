@@ -28,6 +28,14 @@ try {
   console.error(err);
 }
 
+const s: number = new Date().getTime();
+
 // Run build
-console.log(`⚡ [esbuild] Building..`);
+console.log(`⚡ [esbuild] Building started at:`, s);
 build(options).catch(() => process.exit(1));
+const e: number = new Date().getTime();
+console.log(`⚡ [esbuild] Building completed at:`, e);
+
+console.log("Duration:", e - s, "ms");
+
+console.log("");
