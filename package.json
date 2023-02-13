@@ -1,7 +1,7 @@
 {
   "name": "hello-esbuild",
   "version": "1.0.0",
-  "main": "builder.js",
+  "main": "./scripts/builder.ts",
   "author": "Xiaowei Xue",
   "license": "MIT",
   "scripts": {
@@ -12,6 +12,7 @@
     "build": "ts-node ./scripts/builder.ts"
   },
   "dependencies": {
+    "esbuild": "^0.17.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -27,9 +28,10 @@
     "@typescript-eslint/parser": "^5.42.0",
     "autoprefixer": "^10.4.13",
     "chokidar": "^3.5.3",
-    "esbuild": "^0.15.13",
+    "cssnano": "~5.0.6",
     "esbuild-css-modules-plugin": "^2.6.2",
     "esbuild-sass-plugin": "^2.4.0",
+    "esbuild-scss-modules-plugin": "^1.1.1",
     "eslint": "^8.26.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
@@ -58,5 +60,10 @@
   },
   "overrides": {
     "chokidar": "^3.5.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "esbuild": "^0.17.7"
+    }
   }
 }

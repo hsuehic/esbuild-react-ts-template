@@ -1,6 +1,6 @@
 import { LiveServerParams, start } from "live-server";
 import { watch } from "chokidar";
-import { build, BuildOptions } from "esbuild";
+import { BuildOptions, context } from "esbuild";
 
 import { removeSync, copySync } from "fs-extra";
 
@@ -9,7 +9,7 @@ import { buildParams } from "./build-options";
 /**
  * Use ESM and splitting for better performance for development
  */
-const options: BuildOptions = { ...buildParams, minify: false, incremental: true, format: "esm", splitting: true };
+const options: BuildOptions = { ...buildParams, minify: false, format: "esm", splitting: true };
 
 /**
  * Live Server Params
@@ -43,7 +43,11 @@ try {
 
 (async () => {
   // Build
-  const result = await build(options).catch(() => process.exit(1));
+  const buildLabel = "⚡ [esbuild]";
+  console.time(buildLabel);
+  const ctx = await context(options);
+  ctx.rebuild();
+  console.timeEnd(buildLabel);
 
   // Start live server
   start(serverParams);
@@ -51,12 +55,12 @@ try {
    * Watch development server changes
    * ignored: ignore watch `.*` files
    */
-  return watch("src/**/*", { ignored: /(^|[/\\])\../, ignoreInitial: true }).on("all", async (event, p) => {
+  watch("src/**/*", { ignored: /(^|[/\\])\../, ignoreInitial: true }).on("all", async (event, p) => {
     if (event === "change") {
-      console.log(`⚡ [esbuild] Rebuilding ${p}`);
-      console.time("⚡ [esbuild] Done");
-      if (result.rebuild) await result.rebuild();
-      console.timeEnd("⚡ [esbuild] Done");
+      const label = `⚡ [esbuild] Rebuilding ${p}`;
+      console.time(label);
+      ctx.rebuild();
+      console.timeEnd(label);
     }
   });
 })();

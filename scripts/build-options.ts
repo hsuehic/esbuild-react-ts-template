@@ -1,13 +1,14 @@
 import path from "path";
 import { BuildOptions } from "esbuild";
 
-import cssModulesPlugin from "esbuild-css-modules-plugin";
-import { sassPlugin } from "esbuild-sass-plugin";
+// import cssModulesPlugin from "esbuild-css-modules-plugin";
+// import { sassPlugin } from "esbuild-sass-plugin";
 import { htmlPlugin } from "@craftamap/esbuild-plugin-html";
+import { ScssModulesPlugin } from "esbuild-scss-modules-plugin";
 
-import postcss from "postcss";
-import autoprefixer from "autoprefixer";
-import postcssPresetEnv from "postcss-preset-env";
+// import postcss from "postcss";
+// import autoprefixer from "autoprefixer";
+// import postcssPresetEnv from "postcss-preset-env";
 
 /**
  * ESBuild Params
@@ -26,18 +27,24 @@ export const buildParams: BuildOptions = {
   bundle: true,
   sourcemap: false,
   logLevel: "error",
-  incremental: false,
   splitting: true,
   metafile: true,
   plugins: [
-    cssModulesPlugin(),
-    sassPlugin({
-      async transform(source) {
-        const { css } = await postcss([autoprefixer, postcssPresetEnv({ stage: 0 })]).process(source, {
-          from: undefined
-        });
-        return css;
-      }
+    // cssModulesPlugin({
+    //   v2: true
+    // }),
+    // sassPlugin({
+    //   async transform(source) {
+    //     const { css } = await postcss([autoprefixer, postcssPresetEnv({ stage: 0 })]).process(source, {
+    //       from: undefined
+    //     });
+    //     return css;
+    //   }
+    // }),
+    ScssModulesPlugin({
+      inject: false,
+      minify: true
+      // cssCallback: (css) => console.log(css)
     }),
     htmlPlugin({
       files: [

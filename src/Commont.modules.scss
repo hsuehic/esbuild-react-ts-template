@@ -1,0 +1,11 @@
+$color: #f00;
+$color2: #0f0;
+.test {
+  color: $color;
+  font-weight: bold;
+}
+
+.test2 {
+  color: $color2;
+  font-style: normal;
+}
