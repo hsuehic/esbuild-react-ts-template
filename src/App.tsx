@@ -1,6 +1,6 @@
-import React, { Suspense } from "react";
+import React, { Suspense } from 'react';
 
-const Comment = React.lazy(() => import("./Comment"));
+const Comment = React.lazy(() => import('./Comment'));
 
 export default function App() {
   return (

@@ -1,34 +1,34 @@
 // JavaScript Modules via script tag is only supported by mondern browsers. We disable code splitting for production
 
-import { build, BuildOptions } from "esbuild";
-import { removeSync, copySync } from "fs-extra";
+import { build, BuildOptions } from 'esbuild';
+import { removeSync, copySync } from 'fs-extra';
 
 // import { exec } from "child_process";
 
-import { buildParams } from "./build-options";
+import { buildParams } from './build-options';
 
 const options: BuildOptions = {
   ...buildParams,
   sourcemap: true,
   minify: true,
-  format: "esm",
-  splitting: true
+  format: 'esm',
+  splitting: true,
 };
 
 // Clean build folder
 try {
-  console.time("remove build");
-  removeSync("build");
-  console.timeEnd("remove build");
+  console.time('remove build');
+  removeSync('build');
+  console.timeEnd('remove build');
 } catch (err) {
   console.error(err);
 }
 
 // Copy public folder into build folder
 try {
-  console.time("public -> build");
-  copySync("public", "build");
-  console.timeEnd("public -> build");
+  console.time('public -> build');
+  copySync('public', 'build');
+  console.timeEnd('public -> build');
 } catch (err) {
   console.error(err);
 }
@@ -52,6 +52,6 @@ try {
 // }
 
 // Run build
-console.time("⚡ [esbuild] Building");
+console.time('⚡ [esbuild] Building');
 build(options).catch(() => process.exit(1));
-console.timeEnd("⚡ [esbuild] Building");
+console.timeEnd('⚡ [esbuild] Building');
