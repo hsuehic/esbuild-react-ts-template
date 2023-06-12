@@ -66,7 +66,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['scripts/**/*.ts'],
+      files: ['{scripts,scripts-cjs,scripts-mjs}/**/*.{ts,js,mjs}'],
       rules: {
         'no-console': 0,
       },
