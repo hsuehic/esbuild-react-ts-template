@@ -4,7 +4,7 @@ import { BuildOptions } from 'esbuild';
 // import cssModulesPlugin from "esbuild-css-modules-plugin";
 import { sassPlugin, postcssModules } from 'esbuild-sass-plugin';
 import { htmlPlugin } from '@craftamap/esbuild-plugin-html';
-// import eslintPlugin from 'esbuild-plugin-eslint';
+import eslintPlugin from './esbuild-plugin-eslint';
 
 // import postcss from "postcss";
 // import autoprefixer from "autoprefixer";
@@ -58,13 +58,13 @@ export const buildParams: BuildOptions = {
         path.resolve(__dirname, './node_modules/.pnpm/node_modules'),
       ],
     }),
-    // eslintPlugin({
-    //   // @ts-ignore
-    //   useEslintrc: true,
-    //   throwOnError: true,
+    eslintPlugin({
+      // @ts-ignore
+      useEslintrc: true,
+      throwOnError: false,
 
-    //   throwOnWarning: false,
-    // }),
+      throwOnWarning: false,
+    }),
 
     htmlPlugin({
       files: [

@@ -35,7 +35,7 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'no-console': 0,
+    'no-console': 'error',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'no-use-before-define': 'off',
     'no-unused-vars': 'warn',
@@ -64,4 +64,12 @@ module.exports = {
       },
     },
   },
+  overrides: [
+    {
+      files: ['scripts/**/*.ts'],
+      rules: {
+        'no-console': 0,
+      },
+    },
+  ],
 };

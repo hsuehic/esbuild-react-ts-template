@@ -1,3 +1,5 @@
+# CHANGELOG
+
 ## Update (01-11-2022)
 
 - add: css module support [esbuild-css-modules-plugin](https://www.npmjs.com/package/esbuild-css-modules-plugin)

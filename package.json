@@ -7,7 +7,7 @@
   "scripts": {
     "pre-commit": "lint-staged",
     "lint": "eslint \"src/**/*.{ts,tsx}\" --max-warnings=0",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "format": "prettier --write './**/*.{js,jsx,css,md,json}' --config ./.prettierrc",
     "start": "ts-node ./scripts/start.ts",
     "build": "ts-node ./scripts/builder.ts"
   },
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@craftamap/esbuild-plugin-html": "^0.5.0",
+    "@types/eslint": "^8.40.1",
     "@types/fs-extra": "^9.0.13",
     "@types/live-server": "^1.2.1",
     "@types/node": "^18.11.9",
@@ -30,7 +31,6 @@
     "cssnano": "~5.0.6",
     "esbuild": "^0.18.1",
     "esbuild-css-modules-plugin": "^2.6.2",
-    "esbuild-plugin-eslint": "^0.3.6",
     "esbuild-sass-plugin": "^2.4.0",
     "eslint": "^8.42.0",
     "eslint-config-airbnb": "^19.0.4",
