@@ -59,10 +59,8 @@ export const buildParams: BuildOptions = {
       ],
     }),
     eslintPlugin({
-      // @ts-ignore
       useEslintrc: true,
       throwOnError: false,
-
       throwOnWarning: false,
     }),
 

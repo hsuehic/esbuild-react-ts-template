@@ -71,5 +71,9 @@
     "overrides": {
       "esbuild": "^0.18.1"
     }
+  },
+  "engines": {
+    "node": ">=18.10.0",
+    "pnpm": ">=8.6.2"
   }
 }

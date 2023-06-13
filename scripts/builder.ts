@@ -3,8 +3,6 @@
 import { build, BuildOptions } from 'esbuild';
 import { removeSync, copySync } from 'fs-extra';
 
-// import { exec } from "child_process";
-
 import { buildParams } from './build-options';
 
 const options: BuildOptions = {

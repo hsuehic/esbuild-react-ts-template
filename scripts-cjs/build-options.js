@@ -1,11 +1,6 @@
 const path = require('path');
-// import cssModulesPlugin from "esbuild-css-modules-plugin";
 const { sassPlugin, postcssModules } = require('esbuild-sass-plugin');
 const { htmlPlugin } = require('@craftamap/esbuild-plugin-html');
-
-// import postcss from "postcss";
-// import autoprefixer from "autoprefixer";
-// import postcssPresetEnv from "postcss-preset-env";
 
 /**
  * ESBuild Params
@@ -37,9 +32,6 @@ exports.initBuildParams = async () => {
     splitting: true,
     metafile: true,
     plugins: [
-      // cssModulesPlugin({
-      //   v2: true
-      // }),
       sassPlugin({
         type: 'css',
         filter: /\.modules\.scss$/,
@@ -59,10 +51,8 @@ exports.initBuildParams = async () => {
         ],
       }),
       eslintPlugin({
-        // @ts-ignore
         useEslintrc: true,
         throwOnError: false,
-
         throwOnWarning: false,
       }),
 
