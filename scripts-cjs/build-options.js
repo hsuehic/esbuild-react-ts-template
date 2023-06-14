@@ -1,13 +1,13 @@
 const path = require('path');
 const { sassPlugin, postcssModules } = require('esbuild-sass-plugin');
 const { htmlPlugin } = require('@craftamap/esbuild-plugin-html');
+const eslintPlugin = require('esbuild-plugin-eslint-hybrid').default;
 
 /**
  * ESBuild Params
  * @link https://esbuild.github.io/api/#build-api
  */
 exports.initBuildParams = async () => {
-  const eslintPlugin = (await import('esbuild-plugin-eslint')).default;
   console.log(eslintPlugin);
   return {
     color: true,

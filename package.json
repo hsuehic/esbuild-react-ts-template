@@ -35,7 +35,7 @@
     "cssnano": "~5.0.6",
     "esbuild": "^0.18.1",
     "esbuild-css-modules-plugin": "^2.6.2",
-    "esbuild-plugin-eslint": "^0.3.6",
+    "esbuild-plugin-eslint-hybrid": "^1.0.3",
     "esbuild-sass-plugin": "^2.4.0",
     "eslint": "^8.42.0",
     "eslint-config-airbnb": "^19.0.4",

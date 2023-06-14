@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 overrides:
   esbuild: ^0.18.1
 
@@ -57,9 +61,9 @@ devDependencies:
   esbuild-css-modules-plugin:
     specifier: ^2.6.2
     version: 2.7.1(esbuild@0.18.1)
-  esbuild-plugin-eslint:
-    specifier: ^0.3.6
-    version: 0.3.6(esbuild@0.18.1)(eslint@8.42.0)
+  esbuild-plugin-eslint-hybrid:
+    specifier: ^1.0.3
+    version: 1.0.3(esbuild@0.18.1)(eslint@8.42.0)
   esbuild-sass-plugin:
     specifier: ^2.4.0
     version: 2.4.5
@@ -1895,12 +1899,12 @@ packages:
       tmp: 0.2.1
     dev: true
 
-  /esbuild-plugin-eslint@0.3.6(esbuild@0.18.1)(eslint@8.42.0):
-    resolution: {integrity: sha512-1S2tK3GCCUK8BE0L1H6fgEydvPi+nZFb0HC86csQ2l0GsFdZpGMj1khAJ91DnvlfINrfH4x6VLeNwXimowR7pw==}
-    engines: {node: '>=16'}
+  /esbuild-plugin-eslint-hybrid@1.0.3(esbuild@0.18.1)(eslint@8.42.0):
+    resolution: {integrity: sha512-sXASrMeNmRThoDwRm9mOn80GoQGLs7L+cATJ4bsNj4LbX0m83HPglMwZuiIqcMd7Wx0HGDNeA+1NEA4Ze0GYNw==}
+    engines: {node: '>=18.16.0', pnpm: '>=8.6.2'}
     peerDependencies:
-      esbuild: ^0.17.14
-      eslint: ^8.37.0
+      esbuild: ^0.18.2
+      eslint: ^8.42.0
     dependencies:
       esbuild: 0.18.1
       eslint: 8.42.0

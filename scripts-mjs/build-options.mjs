@@ -3,12 +3,11 @@ import path from 'path';
 // import cssModulesPlugin from "esbuild-css-modules-plugin";
 import { sassPlugin, postcssModules } from 'esbuild-sass-plugin';
 import { htmlPlugin } from '@craftamap/esbuild-plugin-html';
-import eslintPlugin from 'esbuild-plugin-eslint';
+import eslintPlugin from 'esbuild-plugin-eslint-hybrid';
 
 import { fileURLToPath } from 'url';
 // eslint-disable-next-line no-underscore-dangle
 const __filename = fileURLToPath(import.meta.url);
-
 // eslint-disable-next-line no-underscore-dangle
 const __dirname = path.dirname(__filename);
 
