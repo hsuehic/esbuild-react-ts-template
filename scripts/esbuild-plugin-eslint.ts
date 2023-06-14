@@ -1,4 +1,5 @@
 import { ESLint } from 'eslint';
+import { Plugin } from 'esbuild';
 
 export interface PluginOptions extends ESLint.Options {
   /**
@@ -22,7 +23,7 @@ export default ({
   throwOnWarning = false,
   throwOnError = false,
   ...eslintOptions
-}: PluginOptions = {}) => ({
+}: PluginOptions = {}): Plugin => ({
   name: 'eslint',
   setup: ({ onLoad, onEnd }: { onLoad: any; onEnd: any }) => {
     const eslint = new ESLint(eslintOptions);
